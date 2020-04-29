@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://alamnr.github.io/profile.html?user=huynhduy9988 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- For getting website splash image while sharing on  other site using Open Graph Protocol (OGP)  -->
+
+    <meta property="og:type" content="Website">
+    <meta property="og:title" content="Github Profile Summary">
+    <meta property="og:image" content="https://alamnr.github.io/images/og-image.png">
+    <meta property="og:description" content="Take a step back and get a bird&#39;s eye view of your GitHub Account.">
+    <!--<meta property="og:url" content="https://alamnr.github.io/" />
+    <meta property="og:site_name" content="Github Profile Summary" />-->
+
+
+  <!-- Set the viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="Description" content="github profile summary pwa service worker manifest promise API">
+
+
+  <!-- Set character encoding -->
+  
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title id="title">huynhduy9988's Github Profile Summary</title>
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="https://alamnr.github.io/manifest.json">
+
+    <!-- Chrome for Android theme color -->
+    <meta name="theme-color" content="#2E3AA1">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="PSK">
+    <link rel="icon" sizes="192x192" href="https://alamnr.github.io/images/touch/icon-192x192.png">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://alamnr.github.io/favicon.ico">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+    <link rel="apple-touch-icon" href="https://alamnr.github.io/images/touch/icon-192x192.png">
+
+    <!-- Tile for Win8 -->
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <!--<meta name="msapplication-TileImage" content="images/touch/icon-192x192.png">-->
+
+
+    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="css">
+    <link rel="stylesheet" href="square-jelly-box.min.css">
+
+    <link rel="stylesheet" href="social-boot.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+
+    <script async="" src="analytics.js"></script><script src="Chart.min.js"></script><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+
+    <script src="masonry.pkgd.min.js"></script>
+    <!--<script src="js/app.js"></script>-->
+    <script src="new_git_promise.js"></script>
+    <script src="chart-1.js"></script>
+    <!--<script src="js/chart.js"></script>-->
+
+</head>
+
+<body data-user-id="huynhduy9988">
+
+
+    <section>
+      <div class="container">
+          <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+          <div class="progress" style="visibility: visible; display: none;">
+              <div id="indicator" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 99.9%;">99.9% wait...</div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <nav class="breadcrumb" id="nav">
+                                <a class="breadcrumb-item" href="https://alamnr.github.io/index.html">Home</a>
+                                <span class="breadcrumb-item active">Profile Summary</span>
+
+                              </nav>
+
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="text-right mt-3">
+                                <a class="btn btn-social-icon btn-twitter" title="Share On Twiiter" id="twitter" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=https://alamnr.github.io/profile.html?user=huynhduy9988&amp;text=huynhduy9988%27s%20GitHub%20profile%20-%20Visualized:&amp;via=javascript&amp;related=scope_closer">
+                                        <span class="fa fa-twitter"></span>
+                                </a>
+                                <a class="btn btn-social-icon btn-facebook" title="Share On Facebook" id="facebook" target="_blank" rel="noopener" href="https://facebook.com/sharer.php?u=https://alamnr.github.io/profile.html?user=huynhduy9988&amp;quote=huynhduy9988%27s%20GitHub%20profile%20-%20Visualized:">
+                                        <span class="fa fa-facebook"></span>
+                                </a>
+                        </div>
+                </div>
+
+                </div>
+
+
+            </div>
+            
+
+    </section>
+
+    <hr>
+
+    <section id="header">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                    <img id="profileImage" width="175px" class="rounded" src="5541345" alt="null">
+                    <p id="bio"></p>
+                </div>
+                <div id="userDetail" class="col-xs-12 col-sm-12 col-md-12 col-lg-3"><ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fa fa-fw fa-user"></i> huynhduy9988 <p><small>(  )</small></p>  </li>
+                    <li class="list-group-item"><i class="fa fa-map-marker"></i> from Vietnam </li>
+					<li class="list-group-item"><i class="fa fa-fw fa-database"></i> 28 public repos <p><small>(Own Repos- 5, Forked- 23)</small></p> </li>
+                    <li class="list-group-item"><i class="fa fa-fw fa-clock-o"></i>Joined GitHub 6 Year Ago  </li>
+                    <li class="list-group-item"><i class="fa fa-fw fa-envelope"></i>   </li>
+                    <li class="list-group-item"><i class="fa fa-fw fa-external-link"></i> <a href="https://github.com/huynhduy9988" target="_blank" rel="noopener">View Profile On GitHub</a>   </li>
+                    </ul></div>
+                <div id="graph" class="col-xs-12 col-sm-12 col-md-12 col-lg-7"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                    <canvas id="quarterCommitCount" width="1270" height="746" class="chartjs-render-monitor" style="display: block; height: 373px; width: 635px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="mainContent-1">
+        <div class="container">
+            <div class="row">
+                <div id="langRepoCountDiv" class="col-xs-12 col-sm-12 col-md-12 col-lg-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                    <h4 class="text-center">Repos per Language</h4>
+                    <canvas id="langRepoCount" width="700" height="350" class="chartjs-render-monitor" style="display: block; height: 175px; width: 350px;"></canvas>
+                </div><div id="langStarCountDiv" class="col-xs-12 col-sm-12 col-md-12 col-lg-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+            <h4 class="text-center">Star per Language </h4>
+            <canvas id="langStarCount" width="700" height="350" class="chartjs-render-monitor" style="display: block; height: 175px; width: 350px;"></canvas>
+        </div>
+
+                <div id="langCommitCountDiv" class="col-xs-12 col-sm-12 col-md-12 col-lg-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                    <h4 class="text-center">Commits per Language</h4>
+                    <canvas id="langCommitCount" width="700" height="350" class="chartjs-render-monitor" style="display: block; height: 175px; width: 350px;"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <br>
+    <hr>
+    <section id="mainContent-2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div id="repoCommitCountDiv" class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+                    <h4 class="text-center">Commits per Repo (top 10)</h4>
+                    <canvas id="repoCommitCount" width="1080" height="540" class="chartjs-render-monitor" style="display: block; height: 270px; width: 540px;"></canvas>
+                </div><div id="repoStarCountDiv" class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+            <h4 class="text-center">Stars per Repo (top 10)</h4>
+            <canvas id="repoStarCount" width="1080" height="540" class="chartjs-render-monitor" style="display: block; height: 270px; width: 540px;"></canvas>
+        </div>
+
+            </div>
+        </div>
+
+
+    </section>
+    <br><hr>
+    <section id="following">
+		<div class="container">
+		  <div id="accordion">
+			<div class="card">
+			  <div class="card-header" id="headingOne">
+				<h5 class="mb-0 text-center">
+				  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Following (14) </button>
+				</h5>
+			  </div>
+
+			  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="card-body">
+				  
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+
+                    <li class="page-item disabled ">
+                    <a class="page-link" href="https://alamnr.github.io/undefined" tabindex="-1">First</a>
+                    </li>
+                    <li class="page-item disabled"><a class="page-link" href="https://alamnr.github.io/undefined" tabindex="-1">Previous</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="https://alamnr.github.io/undefined" tabindex="-1">Next</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="https://alamnr.github.io/undefined" tabindex="-1">Last</a></li>
+
+                  </ul>
+                </nav>
+                  <div class="gridFollowing" style="position: relative; height: 629px;">
+				   <div class="grid-item" style="position: absolute; left: 0px; top: 0px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="402301" alt="cescoffier" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Clement Escoffier <small>(cescoffier)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=cescoffier" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/cescoffier" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 175px; top: 0px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="701906" alt="purplefox" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Tim Fox <small>(purplefox)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=purplefox" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/purplefox" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 350px; top: 0px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="849467" alt="pmlopes" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Paulo Lopes <small>(pmlopes)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=pmlopes" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/pmlopes" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 525px; top: 0px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="1104661" alt="mrniko" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Nikita Koksharov <small>(mrniko)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=mrniko" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/mrniko" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 700px; top: 0px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="1226920" alt="darylteo" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Daryl Teo <small>(darylteo)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=darylteo" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/darylteo" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 875px; top: 0px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="1527816" alt="quocnguyen" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">duplexer <small>(quocnguyen)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=quocnguyen" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/quocnguyen" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 175px; top: 197px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="1963463" alt="ngtuna" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Tuna <small>(ngtuna)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=ngtuna" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/ngtuna" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 700px; top: 197px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="5878421" alt="NghiaTranUIT" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Nghia Tran <small>(NghiaTranUIT)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=NghiaTranUIT" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/NghiaTranUIT" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 0px; top: 216px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="6284353" alt="imbushuo" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Bingxing Wang <small>(imbushuo)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=imbushuo" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/imbushuo" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 350px; top: 216px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="9614404" alt="nguyendangminh" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Nguyen Dang Minh <small>(nguyendangminh)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=nguyendangminh" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/nguyendangminh" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 525px; top: 216px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="13061970" alt="yuen26" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Nguyễn Tuấn Anh <small>(yuen26)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=yuen26" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/yuen26" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 875px; top: 216px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="13324388" alt="keets2012" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">kidme <small>(keets2012)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=keets2012" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/keets2012" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 175px; top: 394px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="14221432" alt="nghiaminhle" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title"> <small>(nghiaminhle)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=nghiaminhle" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/nghiaminhle" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div> <div class="grid-item" style="position: absolute; left: 700px; top: 413px;">
+		<div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="17746953" alt="hoangdh" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Dao Huy Hoang <small>(hoangdh)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=hoangdh" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/hoangdh" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+		</div></div>
+				</div>
+			  </div>
+			</div>
+
+			<div class="card">
+			  <div class="card-header" id="headingTwo">
+				<h5 class="mb-0  text-center">
+				  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Followers (7) </button>
+				</h5>
+			  </div>
+
+			  <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+				<div class="card-body">
+				  
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+
+        <li class="page-item disabled ">
+        <a class="page-link" href="https://alamnr.github.io/undefined" tabindex="-1">First</a>
+        </li>
+        <li class="page-item disabled"><a class="page-link" href="https://alamnr.github.io/undefined" tabindex="-1">Previous</a></li>
+        <li class="page-item disabled"><a class="page-link" href="https://alamnr.github.io/undefined" tabindex="-1">Next</a></li>
+        <li class="page-item disabled"><a class="page-link" href="https://alamnr.github.io/undefined" tabindex="-1">Last</a></li>
+
+      </ul>
+    </nav>
+                  <div class="gridFollowers" style="position: relative; height: 413px;">
+				   <div class="grid-item" style="position: absolute; left: 0px; top: 0px;">
+    <div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="5877145" alt="angusshire" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Angus H. <small>(angusshire)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=angusshire" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/angusshire" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+    </div> <div class="grid-item" style="position: absolute; left: 175px; top: 0px;">
+    <div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="6673982" alt="MichalPaszkiewicz" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Michal Paszkiewicz <small>(MichalPaszkiewicz)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=MichalPaszkiewicz" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/MichalPaszkiewicz" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+    </div> <div class="grid-item" style="position: absolute; left: 350px; top: 0px;">
+    <div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="5878421" alt="NghiaTranUIT" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Nghia Tran <small>(NghiaTranUIT)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=NghiaTranUIT" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/NghiaTranUIT" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+    </div> <div class="grid-item" style="position: absolute; left: 525px; top: 0px;">
+    <div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="12553504" alt="vfaHungnv" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">HungNV <small>(vfaHungnv)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=vfaHungnv" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/vfaHungnv" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+    </div> <div class="grid-item" style="position: absolute; left: 700px; top: 0px;">
+    <div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="18544558" alt="tholaihr" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Tho Lai <small>(tholaihr)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=tholaihr" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/tholaihr" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+    </div> <div class="grid-item" style="position: absolute; left: 875px; top: 0px;">
+    <div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="53739979" alt="Nguyen-Thao-HR" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Nguyễn Thảo <small>(Nguyen-Thao-HR)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=Nguyen-Thao-HR" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/Nguyen-Thao-HR" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+    </div> <div class="grid-item" style="position: absolute; left: 0px; top: 197px;">
+    <div class="card" style="width: 10rem;">
+  <img class="card-img-top" src="20235310" alt="tai-votan" height="100" width="100">
+  <div class="card-body">
+    <h6 class="card-title">Võ Tấn Tài <small>(tai-votan)</small></h6>
+    <p><span style="float:left"><a href="https://alamnr.github.io/profile.html?user=tai-votan" target="_blank" rel="noopener"><small>Summary</small></a>
+    </span><span style="float:right"><a href="https://github.com/tai-votan" target="_blank" rel="noopener"><small>Account</small></a></span></p>
+
+  </div>
+</div>
+    </div></div>
+				</div>
+			  </div>
+			</div>
+
+			</div>
+		</div>
+
+    </section>
+
+    <br><hr>
+
+
+
+    <footer><div class="fixed-bottom-custom"><div>GitHub profile summary is built with <span class="highlight">Vanilla Javascript </span>,<a href="https://masonry.desandro.com/" target="_blank" rel="noopener">masonry.js</a>  and <a href="http://www.chartjs.org/docs/latest/" target="_blank" rel="noopener">chart.js</a> (visualization). Sources on <a target="_blank" rel="noopener" href="https://github.com/alamnr/alamnr.github.io"> GitHub.</a></div><div> Inspired by <a href="https://profile-summary-for-github.com/" target="_blank" rel="noopener">profile-summary-for-github</a></div>
+
+    </div></footer>
+
+    <span class="rate-limit">
+        <span class="msg">The app is currently rate-limited<br>Please check back later</span>
+        <span class="count"><span id="rate-limit-count">4993</span> requests left <br> before rate-limit</span>
+        <h6 id="timer">00:01:05</h6>
+        <p id="errMsg" class="text-center"></p>
+        <button class="btn btn-primary btn-sm" id="reload" style="display:none" type="button">Reload</button>
+    </span>
+
+    <!-- Loading Modal -->
+
+      <div class="container" id="modal">
+      	<div class="row">
+      	      <div class="animationload" style="display: none;">
+                  <div class="osahanloading"></div>
+              </div>
+      	</div>
+    </div>
+
+    <script>
+        var urlParams;
+        var h1 = document.getElementById('timer'),millisec = 0, seconds = 0, minutes = 0,hours=0, t;
+
+        (window.onpopstate = function () {
+            checkRateLimit();
+            var match,
+                pl = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                query = window.location.search.substring(1);
+
+            urlParams = {};
+            while (match = search.exec(query)){
+                urlParams[decode(match[1])] = decode(match[2]);
+            }
+
+            document.getElementById('title').innerText = urlParams['user'] + '\'s Github Profile Summary';
+
+            // Don't pollute the global scope, create data Object in function Scope
+            if(urlParams['user']){
+                document.body.setAttribute('data-user-id',urlParams['user']);
+                var data = createDataObject();
+                timer();
+                getUserInfo(urlParams['user'], data);
+                document.querySelector('#modal .animationload').style.display = 'block';
+            }
+            else{
+				window.location.replace(window.location.href.substring(0,window.location.href.lastIndexOf('/')+1)+'index.html');
+            }
+
+
+        })();
+
+
+
+  function add() {
+    millisec++;
+    if (millisec>=9){
+     millisec=0
+     seconds+=1
+
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    }
+
+    h1.textContent = /*(hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" +*/ (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" +(seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00") + ":" + (millisec > 9 ? millisec : "0" + millisec);
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 100);
+}
+
+
+    </script>
+
+
+    <script src="jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<div id="lbdictex_find_popup" class="lbexpopup hidden" style="position: absolute; top: 0px; left: 0px;"><div class="lbexpopup_top"><h2 class="fl popup_title">&nbsp;</h2><ul><li><a class="close_main popup_close" href="https://alamnr.github.io/profile.html?user=huynhduy9988#">&nbsp;</a></li></ul><div class="clr"></div></div><div class="popup_details"></div><div class="popup_powered">abc</div></div><div id="lbdictex_ask_mark" class="hidden" style="position: absolute; top: 0px; left: 0px;"><a class="lbdictex_ask_select" href="https://alamnr.github.io/profile.html?user=huynhduy9988#">&nbsp;</a></div></body></html>
